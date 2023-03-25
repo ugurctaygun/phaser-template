@@ -8,7 +8,8 @@ var config = {
   physics: {
     default: "arcade",
     arcade: {
-      // gravity: { y: 200 },
+      gravity: { y: 200 },
+      debug: true,
     },
   },
   scene: {
@@ -42,17 +43,23 @@ function create() {
 
   bird = this.physics.add.sprite(400, 100, "bird");
 
-  bird.setVelocity(100, 0);
+  bird.setVelocity(200, 0);
   bird.setBounce(1, 1);
   bird.setCollideWorldBounds(true);
 
   emitter.startFollow(bird);
+
+  this.input.on("pointerdown", flap);
+}
+
+function flap() {
+  bird.body.velocity.y = -200;
 }
 
 function update(time, delta) {
-  if (totalDelta >= 1000) {
-    console.log("here");
-    totalDelta = 0;
-  }
-  totalDelta += delta;
+  // if (totalDelta >= 1000) {
+  //   console.log("here");
+  //   totalDelta = 0;
+  // }
+  // totalDelta += delta;
 }
