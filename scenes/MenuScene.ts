@@ -1,22 +1,24 @@
 import { Scene } from "phaser";
 
 class MenuScene extends Scene {
-  constructor(config) {
+  private button: Phaser.GameObjects.Text;
+  private background: Phaser.GameObjects.Image;
+  private config: string | Phaser.Types.Scenes.SettingsConfig;
+
+  constructor(config: string | Phaser.Types.Scenes.SettingsConfig) {
     super("MenuScene");
     this.config = config;
   }
 
-  create() {
+  create(): void {
     this.createBG();
     this.sceneChange();
   }
 
-  sceneChange() {
+  private sceneChange(): void {
     this.button = this.add
       .text(10, 20, "Switch to Scene Map", {
-        fontSize: "24px",
-        fill: "#af0e0e",
-        border: "1px solid",
+        fontSize: "24px"
       })
       .setInteractive()
       .on("pointerdown", () => {
@@ -24,7 +26,7 @@ class MenuScene extends Scene {
       });
   }
 
-  createBG() {
+  private createBG(): void {
     this.background = this.add.image(0, 0, "sky").setOrigin(0);
     this.background.displayWidth = this.sys.canvas.width;
     this.background.displayHeight = this.sys.canvas.height;

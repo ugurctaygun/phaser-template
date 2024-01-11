@@ -8,6 +8,22 @@ class Preload extends Phaser.Scene {
   preload() {
     const assets = [
       { name: "sky", path: "/assets/sky.png" },
+      {
+        name: "Knight-Attack",
+        path: "/assets/Knight/_Attack.png",
+        frameWidth: 150,
+        frameHeight: 150,
+        startFrame: 0,
+        endFrame: 3,
+      },
+      {
+        name: "Knight-Idle",
+        path: "/assets/Knight/_Idle.png",
+        frameWidth: 150,
+        frameHeight: 150,
+        startFrame: 0,
+        endFrame: 3,
+      },
     ];
 
     assets.forEach((asset) => {

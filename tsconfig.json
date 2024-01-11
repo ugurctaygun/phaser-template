@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+      "target": "esnext",
+      "module": "esnext",
+      "moduleResolution": "node",
+      "strict": true,
+      "jsx": "preserve",
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "lib": ["dom", "dom.iterable", "esnext"],
+      "allowJs": true,
+      "allowSyntheticDefaultImports": true,
+      "noImplicitAny": false,
+      "noImplicitThis": false,
+      "strictFunctionTypes": false,
+      "strictBindCallApply": false,
+      "strictNullChecks": false,
+      "strictPropertyInitialization": false,
+    },
+    "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.js"],
+    "exclude": ["node_modules"]
+  }
