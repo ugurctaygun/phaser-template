@@ -1,12 +1,10 @@
 import { AUTO, Game, Scene } from "phaser";
 import PlayScene from "./scenes/PlayScene";
 import PreloadScene from "./scenes/Preload";
+import UIScene from "./scenes/UIScene";
 
-interface GameConfig extends Phaser.Types.Core.GameConfig {
-  scene: Scene[];
-} 
 
-const config: GameConfig = {
+const config = {
   type: AUTO,
   pixelArt: true,
   parent: "phaser-container",
@@ -25,7 +23,7 @@ const config: GameConfig = {
       debug: true,
     },
   },
-  scene: [new PreloadScene, new PlayScene],
+  scene: [new PreloadScene, new PlayScene , new UIScene({width: 1280, height: 720})],
 };
 
 new Game(config);

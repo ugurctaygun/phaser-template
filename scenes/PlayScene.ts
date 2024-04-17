@@ -1,12 +1,18 @@
 import { Scene, GameObjects } from "phaser";
 import Character from "../entities/Character";
+import UIScene from "./UIScene";
 
 class PlayScene extends Scene {
   private button?: GameObjects.Text;
   private background?: GameObjects.Image;
+  private uiScene?: Phaser.Scene;
 
   constructor() {
     super({ key: "PlayScene" });
+  }
+
+  init() {
+    this.uiScene = this.scene.get('UIScene');
   }
 
   create(): void {
@@ -15,8 +21,8 @@ class PlayScene extends Scene {
   }
 
   createCharacter(): void {
-    const villager = new Character(this, 550, 550, "Knight");
-    this.add.existing(villager)
+    const knight = new Character(this, 550, 550, "Knight");
+    this.add.existing(knight)
   }
 
   createBG(): void {
