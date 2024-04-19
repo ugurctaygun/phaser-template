@@ -23,14 +23,12 @@ class UIScene extends Phaser.Scene {
       height: this.config.height,
       width: this.config.width,
     });
-
   }
 
   preload() {}
 
   init() {
     this.playScene = this.scene.get("PlayScene");
-   
   }
 
   create() {
@@ -40,7 +38,6 @@ class UIScene extends Phaser.Scene {
   createCustomHTMLElement() {
     this.htmlElement  = this.add.dom(0, 0, "custom-element");
     this.grid?.placeAtIndex(47, this.htmlElement);
-    console.log(this.htmlElement)
   }
 }
 
